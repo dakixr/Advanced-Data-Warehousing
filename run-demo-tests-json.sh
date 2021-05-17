@@ -13,7 +13,7 @@ echo "{ \"InnoDB_times\": {" > Resultados/tmp.json
 
 
 
-declare -a rows=("10000" "50000" "100000" "200000" "400000" "600000" "800000" "1000000")
+declare -a rows=("100" "200" "500" "600")
 
 
 for j in "${rows[@]}";
@@ -24,16 +24,16 @@ do
     mysql -u adw -padw -D CorteIngles < data-CorteIngles.sql 2> /dev/null
 
 	echo " \"$j Entradas\": {" >> Resultados/tmp.json
-    for i in $( seq 1 10 );
+    for i in $( seq 1 2 );
     do
-	    run_test $j $i 3
-	    if [ $i -ne 10 ]; then
+	    run_test $j $i 1
+	    if [ $i -ne 2 ]; then
 	   		echo "," >> Resultados/tmp.json
 	    fi
     done
     echo "}" >> Resultados/tmp.json
     
-    if [ $j -ne 1000000 ]; then
+    if [ $j -ne 600 ]; then
 	   		echo "," >> Resultados/tmp.json
 	fi
 
@@ -50,16 +50,16 @@ do
     mysql -u adw -padw -D CorteIngles < data-CorteIngles.sql 2> /dev/null
 
 	echo " \"$j Entradas\": {" >> Resultados/tmp.json
-    for i in $( seq 1 10 );
+    for i in $( seq 1 2 );
     do
-	    run_test $j $i 3
-	    if [ $i -ne 10 ]; then
+	    run_test $j $i 1
+	    if [ $i -ne 2 ]; then
 	   		echo "," >> Resultados/tmp.json
 	    fi
     done
     echo "}" >> Resultados/tmp.json
     
-    if [ $j -ne 1000000 ]; then
+    if [ $j -ne 600 ]; then
 	   		echo "," >> Resultados/tmp.json
 	fi
 
