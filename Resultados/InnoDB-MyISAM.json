@@ -1,38 +1,38 @@
 {
   "InnoDB_times": {
     "100 Entradas": {
-      "4 Clientes concurrentes": 0.00925,
-      "8 Clientes concurrentes": 0.0125
+      "4 Clientes concurrentes": 0.007750,
+      "8 Clientes concurrentes": 0.009000
     },
     "200 Entradas": {
-      "4 Clientes concurrentes": 0.0085,
-      "8 Clientes concurrentes": 0.00975
+      "4 Clientes concurrentes": 0.005750,
+      "8 Clientes concurrentes": 0.009375
     },
     "500 Entradas": {
-      "4 Clientes concurrentes": 0.0085,
-      "8 Clientes concurrentes": 0.01225
+      "4 Clientes concurrentes": 0.007500,
+      "8 Clientes concurrentes": 0.010600
     },
     "600 Entradas": {
-      "4 Clientes concurrentes": 0.0075,
-      "8 Clientes concurrentes": 0.018875
+      "4 Clientes concurrentes": 0.006500,
+      "8 Clientes concurrentes": 0.011750
     }
   },
   "MyISAM_times": {
     "100 Entradas": {
-      "4 Clientes concurrentes": 0.006749999999999999,
-      "8 Clientes concurrentes": 0.009875
+      "4 Clientes concurrentes": 0.005750,
+      "8 Clientes concurrentes": 0.009250
     },
     "200 Entradas": {
-      "4 Clientes concurrentes": 0.006999999999999999,
-      "8 Clientes concurrentes": 0.0115
+      "4 Clientes concurrentes": 0.006500,
+      "8 Clientes concurrentes": 0.009875
     },
     "500 Entradas": {
-      "4 Clientes concurrentes": 0.009250000000000001,
-      "8 Clientes concurrentes": 0.011500000000000002
+      "4 Clientes concurrentes": 0.008250,
+      "8 Clientes concurrentes": 0.012125
     },
     "600 Entradas": {
-      "4 Clientes concurrentes": 0.00825,
-      "8 Clientes concurrentes": 0.011875
+      "4 Clientes concurrentes": 0.008000,
+      "8 Clientes concurrentes": 0.012375
     }
   }
 }
