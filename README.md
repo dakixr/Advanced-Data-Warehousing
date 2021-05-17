@@ -21,7 +21,7 @@ Se ha de ejecutar uno de los siguientes comandos desde la raíz del proyecto y l
 ./run-demo-tests-json.sh
 ```
 
-Los resultados se muestran en este formato, separando InnoDb de MyISAM. Además de agrupar los tiempos con el mismo número de entradas especificando el número de clientes concurrentes ejecutando queries.
+Los tiempos (s) se muestran en el siguiente formato: separando InnoDb de MyISAM, agrupando los tiempos con el mismo número de entradas y especificando el número de clientes ejecutando queries de manera simultanea. 
 ```json
 {
   "InnoDB_times": {
