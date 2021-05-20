@@ -1,18 +1,18 @@
 # ADW - E1 - Desarrollo práctico
 
-## Para poder ejecutar los tests se necesita disponer de los siguientes requerimientos:
+## Requerimientos para ejecutar el código correctamene:
 
-- Una BBDD mysql.
+- Una BBDD MySQL.
   * Inicializada en el puerto 3306.
   * Con las siguientes credenciales "usuario = adw" y "contraseña = adw" además de darle los permisos necesarios.
     * `mysql> CREATE USER 'adw'@'%' IDENTIFIED BY 'adw';`
     * `mysql> GRANT ALL PRIVILEGES ON *.* TO 'adw'@'%' WITH GRANT OPTION;`
-- Tener instalado jq: `sudo apt install jq`.
-- Disponer de Python 3.8 instalado.
+- Tener jq: `sudo apt install jq`.
+- Python 3.8 instalado.
 
 ## Ejecución de los tests:
 
-Se ha de ejecutar uno de los siguientes comandos desde la raíz del proyecto y los resultados de los test se almacenarán dentro del directorio Resultados en formato json.
+Se ha de ejecutar uno de los siguientes comandos, en función del volumen de pruebas que se deseen realiar, desde la raíz del proyecto y los resultados de los test se almacenarán dentro del directorio Resultados en formato json.
 
 ```bash
 ./run-all-tests-json.sh
