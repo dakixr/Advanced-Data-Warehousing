@@ -1,6 +1,6 @@
 # ADW - E1 - Desarrollo práctico
 
-## Requerimientos para ejecutar el código correctamene:
+## Requerimientos para ejecutar el código correctamente:
 
 - Una BBDD MySQL.
   * Inicializada en el puerto 3306.
