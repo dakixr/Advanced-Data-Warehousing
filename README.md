@@ -1,7 +1,3 @@
-Certainly! An attractive README is often a combination of concise instructions, detailed descriptions, and a logical structure. Here's an enhanced version of the README:
-
----
-
 # Advanced Data Warehousing (ADW) - E1
 ## Practical Development
 
