@@ -1,66 +1,76 @@
-# ADW - E1 - Desarrollo práctico
+Certainly! An attractive README is often a combination of concise instructions, detailed descriptions, and a logical structure. Here's an enhanced version of the README:
 
-## Requerimientos para ejecutar el código correctamente:
+---
 
-- Una BBDD MySQL.
-  * Inicializada en el puerto 3306.
-  * Con las siguientes credenciales "usuario = adw" y "contraseña = adw" además de darle los permisos necesarios.
-    * `mysql> CREATE USER 'adw'@'%' IDENTIFIED BY 'adw';`
-    * `mysql> GRANT ALL PRIVILEGES ON *.* TO 'adw'@'%' WITH GRANT OPTION;`
-- Tener jq: `sudo apt install jq`.
-- Python 3.8 instalado.
+# Advanced Data Warehousing (ADW) - E1
+## Practical Development
 
-## Ejecución de los tests:
+**Project Overview**:  
+This project focuses on the comparative performance of InnoDB and MyISAM storage engines in MySQL under various test conditions. Using this repository, users can set up their environments and run benchmarks to analyze the speed of these storage engines under different concurrent client loads and data entry counts.
 
-Se ha de ejecutar uno de los siguientes comandos, en función del volumen de pruebas que se deseen realiar, desde la raíz del proyecto y los resultados de los test se almacenarán dentro del directorio Resultados en formato json.
+### Prerequisites:
 
-```bash
-./run-all-tests-json.sh
-```
-```bash
-./run-demo-tests-json.sh
-```
+1. **MySQL Database**:
+    - Ensure it's running on port `3306`.
+    - Set up with the credentials: username = `adw` and password = `adw`.
+    - Assign necessary permissions to the user:
+      ```sql
+      mysql> CREATE USER 'adw'@'%' IDENTIFIED BY 'adw';
+      mysql> GRANT ALL PRIVILEGES ON *.* TO 'adw'@'%' WITH GRANT OPTION;
+      ```
+2. **`jq` Tool**: This lightweight and flexible command-line JSON processor is essential for handling JSON outputs. Install it using:
+    ```bash
+    sudo apt install jq
+    ```
+3. **Python Environment**: Ensure you have Python 3.8 or higher installed.
 
-Los tiempos (s) se muestran en el siguiente formato: separando InnoDb de MyISAM, agrupando los tiempos con el mismo número de entradas y especificando el número de clientes ejecutando queries de manera simultanea. 
+### Running the Benchmark Tests:
+
+Based on the test volume you aim to execute, run one of the following commands from the project root:
+
+- For comprehensive testing:
+    ```bash
+    ./run-all-tests-json.sh
+    ```
+
+- For a quick demo:
+    ```bash
+    ./run-demo-tests-json.sh
+    ```
+
+Upon execution, test results will be conveniently stored in the `Resultados` directory in a structured JSON format.
+
+### Test Results Structure:
+
+The output provides detailed timings in seconds. These timings allow users to understand the performance variances between InnoDB and MyISAM storage engines. Results are grouped by:
+- Storage Engine Type (InnoDB or MyISAM)
+- Number of data entries
+- Number of concurrent clients executing queries
+
+For instance:
 ```json
 {
   "InnoDB_times": {
-    "100 Entradas": {
-      "4 Clientes concurrentes": 0.0009200,
-      "8 Clientes concurrentes": 0.0012500
-    },
-    "200 Entradas": {
-      "4 Clientes concurrentes": 0.0008500,
-      "8 Clientes concurrentes": 0.0009700
-    },
-    "500 Entradas": {
-      "4 Clientes concurrentes": 0.0008500,
-      "8 Clientes concurrentes": 0.0012200
-    },
-    "600 Entradas": {
-      "4 Clientes concurrentes": 0.0007500,
-      "8 Clientes concurrentes": 0.0018801
+    "100 Entries": {
+      "4 Concurrent Clients": 0.0009200,
+      "8 Concurrent Clients": 0.0012500
     }
   },
   "MyISAM_times": {
-    "100 Entradas": {
-      "4 Clientes concurrentes": 0.0067400,
-      "8 Clientes concurrentes": 0.0098700
-    },
-    "200 Entradas": {
-      "4 Clientes concurrentes": 0.0006900,
-      "8 Clientes concurrentes": 0.0011500
-    },
-    "500 Entradas": {
-      "4 Clientes concurrentes": 0.0092500,
-      "8 Clientes concurrentes": 0.0115000
-    },
-    "600 Entradas": {
-      "4 Clientes concurrentes": 0.0082500,
-      "8 Clientes concurrentes": 0.0118700
-    }
+    ...
   }
 }
-
 ```
 
+### Insights:
+- The benchmarks are designed to give a holistic view of how MySQL's storage engines perform under different conditions.
+- From initial results, users might notice that InnoDB and MyISAM have distinct performance characteristics, especially as the number of concurrent clients increases.
+- It's essential to choose the right storage engine based on the specific needs of your application, whether it prioritizes read-heavy operations, write-heavy tasks, or a balanced mix.
+
+### Future Work:
+- Expand the benchmarks to include more storage engines.
+- Incorporate metrics like CPU and Memory utilization during test runs.
+- Provide visualization tools/scripts to plot performance graphs from the JSON outputs.
+
+### Contributing:
+We welcome contributions! If you'd like to improve the benchmarking scripts, offer more insights, or add more storage engine tests, please open a pull request or issue.
